@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.fit5046test0.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_pde"
+        android:name="com.example.fit5046test0.ui.PainDataEntry.PDEFragment"
+        android:label="Pain Entry"
+        tools:layout="@layout/fragment_pde" />
+
+    <fragment
+        android:id="@+id/nav_daily_record"
+        android:name="com.example.fit5046test0.ui.DailyRecord.DailyRecordFragment"
+        android:label="Daily Records"
+        tools:layout="@layout/fragment_daily_record" />
+
+    <fragment
+        android:id="@+id/nav_map"
+        android:name="com.example.fit5046test0.ui.Map.MapFragment"
+        android:label="Map"
+        tools:layout="@layout/map_fragment"/>
+
+    <fragment
+        android:id="@+id/nav_report"
+        android:name="com.example.fit5046test0.ui.Report.ReportFragment"
+        android:label="Report"
+        tools:layout="@layout/report_fragment"/>
+</navigation>
