@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fit5046test0">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FIT5046Test0">
+        <activity
+            android:name=".LogIn.SignUpActivity"
+            android:parentActivityName=".LogIn.SignInActivity"
+            android:label="@string/title_activity_sign_up"
+            android:theme="@style/Theme.FIT5046Test0.NoActionBar"></activity>
         <activity
             android:name=".LogIn.SignInActivity"
             android:label="@string/title_activity_sign_in"
