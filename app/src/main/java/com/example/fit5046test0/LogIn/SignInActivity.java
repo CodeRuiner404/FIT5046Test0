@@ -18,6 +18,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -58,6 +59,11 @@ public class SignInActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
+        //prevent user sign in again
+        if(auth.getCurrentUser() != null){
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        }
+
         // login
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,6 +97,7 @@ public class SignInActivity extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         }else {
                             Toast.makeText(SignInActivity.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Log.d("TAG", "Error !" + task.getException().getMessage());
                         }
 
                     }

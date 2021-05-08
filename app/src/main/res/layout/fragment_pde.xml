@@ -1,22 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.PainDataEntry.PDEFragment">
 
-    <TextView
-        android:id="@+id/text_gallery"
+<!--    <data>-->
+<!--        <variable-->
+<!--            android:name= "pdeViewModel"-->
+<!--            android:type= "com.example.fit5046test0.ui.PainDataEntry.PDEViewModel" />-->
+<!--    </data>-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/text_gallery"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:layout_marginEnd="8dp"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="1.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.165" />-->
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/pde_tv1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:text="Pain level: " />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/pde_pain_level"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:stepSize="1.0"
+            android:valueFrom="0.0"
+            android:valueTo="10.0"
+            tools:layout_editor_absoluteX="16dp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/pde_tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="Pain location: "
+            tools:layout_editor_absoluteX="0dp"
+            android:gravity="left"/>
+
+        <Spinner
+            android:id="@+id/pde_pain_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"
+            android:layout_marginTop="90dp"
+            android:entries="@array/location_list"
+            android:gravity="right"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/pde_tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:text="Mood level:"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <RadioGroup
+            android:id="@+id/pde_moods"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteY="226dp">
+
+            <RadioButton
+                android:id="@+id/pde_mood1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="very low" />
+
+            <RadioButton
+                android:id="@+id/pde_mood2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="low" />
+
+            <RadioButton
+                android:id="@+id/pde_mood3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="average" />
+
+            <RadioButton
+                android:id="@+id/pde_mood4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="high" />
+
+            <RadioButton
+                android:id="@+id/pde_mood5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="very high" />
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/pde_tv4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Daily Steps:"
+            tools:layout_editor_absoluteX="7dp"
+            tools:layout_editor_absoluteY="503dp" />
+
+        <EditText
+            android:id="@+id/editTextNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            tools:layout_editor_absoluteX="110dp"
+            tools:layout_editor_absoluteY="492dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/pde_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="624dp" />
+
+        <Button
+            android:id="@+id/pde_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+            tools:layout_editor_absoluteX="276dp"
+            tools:layout_editor_absoluteY="623dp" />
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>
