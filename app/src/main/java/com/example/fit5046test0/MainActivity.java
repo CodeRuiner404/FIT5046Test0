@@ -34,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseFirestore fbStore;
     private DatabaseReference fbDatabase;
     private String userFullName;
+    private String emailOfUser;
+    //weather
+    private String url ="api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}";
+    private String apiKey = "63baafa6194607e862dc3ab053c5a095";
 
 
 
@@ -87,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
 
         TextView userEmail = headerView.findViewById(R.id.nav_head_email);
         userEmail.setText(auth.getCurrentUser().getEmail());
+        setEmailOfUser(auth.getCurrentUser().getEmail());
+
 
 
         // Passing each menu ID as a set of Ids because each
@@ -122,5 +128,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void setUserFullName(String userFullName) {
         this.userFullName = userFullName;
+    }
+
+    public String getEmailOfUser() {
+        return emailOfUser;
+    }
+
+    public void setEmailOfUser(String emailOfUser) {
+        this.emailOfUser = emailOfUser;
     }
 }
